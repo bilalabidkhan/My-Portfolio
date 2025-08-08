@@ -16,7 +16,7 @@ const Hero = () => {
            <p className='font-semibold text-[25px] sm:text-[48px]'>I`m {' '} 
             <span className='text-blue-800'>
             <Typewriter
-            words={["WEB DEVELOPER" , "UI/UX DESIGN"]}
+            words={["Frontend Developer" , "Figma Design Clone"]}
             loop={true}
             cursor
             cursorStyle='|'
@@ -39,8 +39,8 @@ const Hero = () => {
            </div>
         </div>
       {/* image-content */}
-        <div className='py-10'>
-           <Image src={"/images/image.png"} alt='hero' width={250} height={250} className='rounded-full'/>
+        <div className='py-10 border px-4 mt-4 bg-slate-300 rounded-md shadow-xl'>
+           <Image src={"/images/image.png"} alt='hero' width={250} height={250} className='rounded-full object-cover shadow-2xl'/>
         </div>
     </div>
   
