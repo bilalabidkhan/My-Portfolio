@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import Link from 'next/link';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,30 +9,38 @@ const Header = () => {
     setIsOpen(!isOpen); 
  }
   return (
-   <div className='w-full container pt-6 shadow p-5'>
-     <div className='flex justify-between items-center'>
-       <div className='font-bold text-2xl text-blue-800'>CodebyBilal</div>
-         <ul className='gap-8 lg:gap-16 hidden md:flex'>
-           <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#hero" className=''>Home</a></li>
-           <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#skills">Skill</a></li>
-           <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#project">Project</a></li>
-           <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#about">About</a></li>
-           <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#contact">Conatct</a></li>
-         </ul>
-         <div className='md:hidden' onClick={toggleMenu}>
-            {isOpen ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-         </div>
-       </div>
-        {isOpen && (
-          <ul className='flex flex-col gap-4 mt-4 md:hidden pl-[70%] pb-8'>
-            <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#hero" onClick={toggleMenu}>Home</a></li>
-            <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#skills" onClick={toggleMenu}>Skills</a></li>
-            <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#project" onClick={toggleMenu}>Project</a></li>
-            <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#about" onClick={toggleMenu}>About</a></li>
-            <li className='menuLink font-bold text-[15px] hover:text-blue-800'><a href="#conatct" onClick={toggleMenu}>Conatct</a></li>
-          </ul>
-        )}    
-   </div>
+    <header className="fixed top-0 left-0 w-full z-50 bg-slate-200 shadow-md">
+      <div className="flex justify-between items-center px-4 py-4">
+        {/* Logo */}
+          <h1 className="text-2xl font-bold text-blue-800">CodeByBilal</h1>
+            {/* Desktop Menu */}
+              <ul className="hidden md:flex gap-8 font-semibold">
+                <li><Link href="#" className='hover:text-blue-800'>Home</Link></li>
+                <li><Link href="#skills" className='hover:text-blue-800'>Skills</Link></li>
+                <li><Link href="#projects" className='hover:text-blue-800'>Projects</Link></li>
+                <li><Link href="#about" className='hover:text-blue-800'>About</Link></li>
+                <li><Link href="#contact" className='hover:text-blue-800'>Contact</Link></li>
+              </ul>
+            {/* Mobile Menu Icon */}
+             <div className="md:hidden z-50 cursor-pointer" onClick={toggleMenu}>
+              {isOpen ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
+             </div>
+      </div>
+            {/* Mobile Sliding Menu */}
+            <div
+              className={`fixed top-0 right-0 h-full w-[70%] bg-slate-100 shadow-lg transform transition-transform duration-300 ${
+               isOpen ?"translate-x-0" : "translate-x-full"
+            }`}
+            >
+           <ul className="flex flex-col gap-6 mt-20 px-6 font-semibold">
+            <li><Link href="#" className='hover:text-blue-800' onClick={toggleMenu}>Home</Link></li>
+            <li><Link href="#skills" className='hover:text-blue-800' onClick={toggleMenu}>Skills</Link></li>
+            <li><Link href="#projects" className='hover:text-blue-800' onClick={toggleMenu}>Projects</Link></li>
+            <li><Link href="#about" className='hover:text-blue-800' onClick={toggleMenu}>About</Link></li>
+            <li><Link href="#contact" className='hover:text-blue-800' onClick={toggleMenu}>Contact</Link></li>
+           </ul>
+          </div>
+    </header>
   )
 };
 

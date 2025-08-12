@@ -8,7 +8,8 @@ import { CiLinkedin } from "react-icons/ci";
 
 const Hero = () => {
   return (
-    <div id='home' className='flex flex-col md:flex-row justify-evenly items-center py-20'>
+    <div id='home' className='flex flex-col md:flex-row justify-evenly items-center py-40'>
+       
       {/* text-content */}
         <div data-aos="zoom-in-up">
            <p className='font-semibold text-[20px] sm:text-[40px]'>Hello</p>
@@ -38,9 +39,9 @@ const Hero = () => {
               </a>
            </div>
         </div>
-      {/* image-content */}
-        <div className='py-10 border px-4 mt-4 bg-slate-300 rounded-md shadow-xl'>
-           <Image src={"/images/image.png"} alt='hero' width={250} height={250} className='rounded-full object-cover shadow-2xl'/>
+        {/* image-content */}
+        <div className='py-10'>
+           <Image src={"/images/bilalkhan.jpg"} alt='Bilal' width={250} height={250} className='rounded-full object-cover shadow-2xl'/>
         </div>
     </div>
   

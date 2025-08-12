@@ -1,17 +1,26 @@
 import React from 'react'
+import Image from 'next/image'
 
 const About = () => {
   return (
-    <div id='about' className='sm:m-20 m-8'>
-      <h1 data-aos="zoom-in-up" className='text-center text-4xl font-bold text-blue-800'>About Me</h1>
-      <p data-aos="zoom-in-up" className='text-center mx-4 pt-4 text-xl text-blue-800'>
-        Hello! My name is Bilal khan, amd i`m just starting my journey in the world
-         of Web Development, Figma Design.I enjoy learning new things and building small 
-         project to improve my skills.
-        I may be a beginner, but i'm passionate, curious and always ready to put in the 
-         hardwork to grow and improve. I believe in learning by doing, and i'm exited to keep 
-         exporling and gaining more experience.
-      </p>   
+    <div id='about' className='scroll-mt-20 py-8'>
+      <h1 className='text-center text-4xl font-bold text-blue-800'>About Me</h1>
+        <div className='grid sm:grid-cols-2 items-center gap-8 py-8'>
+          {/* right side */}
+         <div className='flex justify-center' data-aos="fade-right">
+           <Image src={"/images/bilalkhan.jpg"} alt='hero' width={250} height={250} className='rounded-full object-cover shadow-2xl'/>
+         </div>
+         <div className='flex justify-center items-center p-8'>
+           <p className='text-xl font-medium text-black'>
+            I’m a passionate Front-End Developer, crafting modern, fully 
+            responsive, and user-friendly websites. Skilled in React, Next.js, 
+            Tailwind CSS, and JavaScript and I'm currently learning Agentic AI 
+            in Governor House IT Initative. I blend clean code with creative 
+            design to deliver impactful digital experiences.You can contact me 
+            any time I'll be very happy to assist you <strong>Thank You!</strong> 
+           </p>       
+         </div>
+      </div> 
     </div>
   )
 }
