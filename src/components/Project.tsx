@@ -67,7 +67,7 @@ const Project = () => {
     },
     {
       title: "Fake store api",
-      description: "A countdown timer in Next.js, updating in real-time for events and launches.",
+      description: "Responsive e-commerce app with add-to-cart & checkout using Fake Store API. ",
       image: "/images/store.png",
       tectStack: 
        [
@@ -75,7 +75,7 @@ const Project = () => {
          <SiTypescript className='size-4'/>,
          <RiTailwindCssFill className='size-4'/>, 
        ],
-      live: ""
+      live: "https://fake-store-sooty.vercel.app/"
     },
   ]
   return (
@@ -97,7 +97,7 @@ const Project = () => {
               ))}
             </div>
             <div className='w-24 px-2 py-1 text-white text-base font-semibold border rounded-md bg-blue-500 hover:bg-blue-600 mt-2'>
-              <Link href={project.live} target='_blank' className='underline underline-offset-2'>
+              <Link href={project.live} target='_blank' className='underline underline-offset-2 whitespace-nowrap'>
                 Live Demo
               </Link>
             </div>
