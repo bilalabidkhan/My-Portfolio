@@ -9,6 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        myBlack: '#111827',
+			  mylightgray: '#D1D5DB',
+			  myCyan: '#00F5FF',
         background: "var(--background)",
         foreground: "var(--foreground)",
       },  

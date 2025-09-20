@@ -79,33 +79,46 @@ const Project = () => {
     },
   ]
   return (
-    <div id='projects' className='scroll-mt-20 py-8'> 
-      <h1 data-aos="zoom-in-up" className='text-center text-4xl font-bold text-blue-800'>My Project</h1>
-      <div data-aos="zoom-in-up" className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 p-5 gap-7 py-10'>
+    <div id='projects' className='scroll-mt-20'> 
+     <h1 data-aos="fade-up" className='text-center text-4xl font-bold text-myCyan'>My Project</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 p-4 gap-8 py-10">
         {projects.map((project, index) => (
-          <div key={index} className='border rounded-md shadow-lg hover:scale-105 transition-transform p-1'>
-              <Image src={project.image} alt='projects' width={250} height={250} className='object-contain rounded w-full h-68 cursor-pointe '/>
-            <div > 
-              <p className='font-bold text-black'>{project.title}</p>
-              <p className='font-medium text-gray-500'>{project.description}</p>
-            </div>
-            <div className='flex flex-wrap gap-2 mt-1'>
-              {project.tectStack.map((teck, i) => (
-                <span key={i} className='border rounded-md text-base px-2 py-1 sm:px-3 sm:py-2 bg-blue-300 hover:bg-blue-400 text-black'>
-                  {teck}
+         <div key={index} data-aos="fade-up" className="border-2 border-cyan-400 shadow-[0_0_18px_#00F0FF] relative group rounded-2xl overflow-hidden cursor-pointer h-64">
+           {/* Image */}
+            <Image
+              src={project.image}
+              alt="projects"
+              width={250}
+              height={250}
+              className="rounded w-full h-full transition-transform duration-500 group-hover:scale-110"
+            />
+           {/* Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-4">
+              <p className="font-bold text-lg mb-2">{project.title}</p>
+              <p className="font-medium text-sm text-gray-200 mb-3">{project.description}</p>
+             {/* Tech Stack */}
+              <div className="flex flex-wrap justify-center gap-2 mb-3">
+                {project.tectStack.map((teck, i) => (
+                <span
+                  key={i}
+                  className="border rounded-md text-sm px-2 py-1 bg-blue-300 hover:bg-blue-400 text-black"
+                >
+                {teck}
                 </span>
               ))}
-            </div>
-            <div className='w-24 px-2 py-1 text-white text-base font-semibold border rounded-md bg-blue-500 hover:bg-blue-600 mt-2'>
-              <Link href={project.live} target='_blank' className='underline underline-offset-2 whitespace-nowrap'>
-                Live Demo
-              </Link>
-            </div>
-           
-          </div>
-        ))}
-      </div>
-    </div>
+              </div>
+            {/* Live Demo Button */}
+             <Link
+               href={project.live}
+               target="_blank"
+               className="px-3 py-2 text-white text-sm font-semibold rounded-md bg-blue-500 hover:bg-blue-600">
+               Live Demo
+             </Link>
+         </div>
+        </div>
+       ))}
+     </div>
+   </div>
   )
 }
 

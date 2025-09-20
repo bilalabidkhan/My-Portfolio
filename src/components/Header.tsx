@@ -9,35 +9,35 @@ const Header = () => {
     setIsOpen(!isOpen); 
  }
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-slate-200 shadow-md">
-      <div className="flex justify-between items-center px-4 py-4">
+    <header className="fixed top-0 left-0 w-full z-50 bg-slate-700 shadow-md">
+      <div className="flex justify-between items-center px-6 py-6">
         {/* Logo */}
-          <h1 className="text-2xl font-bold text-blue-800">CodeByBilal</h1>
+          <h1 className="text-2xl font-bold text-mylightgray">Portfolio</h1>
             {/* Desktop Menu */}
               <ul className="hidden md:flex gap-8 font-semibold">
-                <li><Link href="#" className='hover:text-blue-800'>Home</Link></li>
-                <li><Link href="#skills" className='hover:text-blue-800'>Skills</Link></li>
-                <li><Link href="#projects" className='hover:text-blue-800'>Projects</Link></li>
-                <li><Link href="#about" className='hover:text-blue-800'>About</Link></li>
-                <li><Link href="#contact" className='hover:text-blue-800'>Contact</Link></li>
+                <li><Link href="#" className='text-gray-300'>Home</Link></li>
+                <li><Link href="#skills" className='text-gray-300'>Skills</Link></li>
+                <li><Link href="#projects" className='text-gray-300'>Projects</Link></li>
+                <li><Link href="#about" className='text-gray-300'>About</Link></li>
+                <li><Link href="#contact" className='text-gray-300'>Contact</Link></li>
               </ul>
             {/* Mobile Menu Icon */}
-             <div className="md:hidden z-50 cursor-pointer" onClick={toggleMenu}>
+             <div className="md:hidden z-50 text-mylightgray cursor-pointer" onClick={toggleMenu}>
               {isOpen ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
              </div>
       </div>
             {/* Mobile Sliding Menu */}
             <div
-              className={`fixed top-0 right-0 h-full w-[70%] bg-slate-100 shadow-lg transform transition-transform duration-300 ${
+              className={`fixed top-0 right-0 h-full w-[70%] bg-slate-700 transform transition-transform duration-300 ${
                isOpen ?"translate-x-0" : "translate-x-full"
             }`}
             >
            <ul className="flex flex-col gap-6 mt-20 px-6 font-semibold">
-            <li><Link href="#" className='hover:text-blue-800' onClick={toggleMenu}>Home</Link></li>
-            <li><Link href="#skills" className='hover:text-blue-800' onClick={toggleMenu}>Skills</Link></li>
-            <li><Link href="#projects" className='hover:text-blue-800' onClick={toggleMenu}>Projects</Link></li>
-            <li><Link href="#about" className='hover:text-blue-800' onClick={toggleMenu}>About</Link></li>
-            <li><Link href="#contact" className='hover:text-blue-800' onClick={toggleMenu}>Contact</Link></li>
+            <li><Link href="#" className='text-mylightgray' onClick={toggleMenu}>Home</Link></li>
+            <li><Link href="#skills" className='text-mylightgray' onClick={toggleMenu}>Skills</Link></li>
+            <li><Link href="#projects" className='text-mylightgray' onClick={toggleMenu}>Projects</Link></li>
+            <li><Link href="#about" className='text-mylightgray' onClick={toggleMenu}>About</Link></li>
+            <li><Link href="#contact" className='text-mylightgray' onClick={toggleMenu}>Contact</Link></li>
            </ul>
           </div>
     </header>

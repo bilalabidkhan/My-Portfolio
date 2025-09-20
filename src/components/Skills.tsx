@@ -5,7 +5,7 @@ import { BiLogoCss3, BiLogoFigma, BiLogoHtml5, BiLogoJavascript, BiLogoTypescrip
 const Skills = () => {
   const skill = [
     {
-      icon: <BiLogoHtml5 className='size-20 text-yellow-900'/>,
+      icon: <BiLogoHtml5 className='size-20 text-yellow-600'/>,
       title: "HTML",
       level: "Intermediate",
     },
@@ -46,14 +46,14 @@ const Skills = () => {
     },
   ]
   return (
-    <div className='bg-slate-50 scroll-mt-20 py-8' id='skills'>
-      <h1 data-aos="zoom-in-up" className='text-center text-4xl font-bold text-blue-800'>Technicals Skills</h1>
-      <div data-aos="zoom-in-up" className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-6 gap-5'>
+    <div className='scroll-mt-20 py-5' id='skills'>
+      <h1 data-aos="fade-up" className='text-center text-4xl font-bold text-myCyan mb-10'>Technicals Skills</h1>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 gap-8'>
         {skill.map((items, index) => (
-          <div key={index} className='border rounded-lg bg-white py-5 shadow-lg hover:scale-105 transition-transform'> 
+          <div key={index} data-aos="fade-up" className='border rounded-lg bg-slate-700 border-cyan-400 shadow-[0_0_18px_#00F0FF] py-5 mb-5'> 
             <p className='flex justify-center'>{items.icon}</p>
-            <p className='sm:text-[25px] text-[20px] font-medium text-center'>{items.title}</p>       
-            <p className='sm:text-[25px] text-[20px] font-medium text-center text-green-600'>{items.level}</p>  
+            <p className='sm:text-[25px] text-[20px] font-medium text-center text-myCyan'>{items.title}</p>       
+            <p className='sm:text-[25px] text-[20px] font-medium text-center text-myCyan'>{items.level}</p>  
           </div>
        ))}
        </div>
